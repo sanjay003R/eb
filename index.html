@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="a1">
+		<div class="a2">
+			<div>
+				<label>Unites : </label>
+			    <input type="numbers" id="demo">
+			    <button onclick="show()">Submit</button>
+			</div>
+			<table>
+				<tr>
+					<th>No</th>
+					<th>Unites</th>
+					<th>Per Unit</th>
+					<th>Tax 20%</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td id="b1"></td>
+					<td id="b2"></td>
+					<td id="b3"></td>
+					<td id="b4"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+		function show()
+		{
+			let result=document.getElementById("demo").value;
+			if(result<=100)
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="0";
+				document.getElementById("b3").innerHTML="0";
+				document.getElementById("b4").innerHTML="no charge";
+			}
+			else if(result<=200)
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="2.5";
+				document.getElementById("b3").innerHTML=(result*2.5)/20;
+				document.getElementById("b4").innerHTML=(result*2.5)/20+(result*2.5);
+			}
+			else if(result<=300)
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="3.5";
+				document.getElementById("b3").innerHTML=(result*3.5)/20;
+				document.getElementById("b4").innerHTML=(result*3.5)/20+(result*3.5);
+			}
+			else if(result<=400)
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="4.5";
+				document.getElementById("b3").innerHTML=(result*4.5)/20;
+				document.getElementById("b4").innerHTML=(result*4.5)/20+(result*4.5);
+			}
+			else if(result<=500)
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="3.5";
+				document.getElementById("b3").innerHTML=(result*5.5)/20;
+				document.getElementById("b4").innerHTML=(result*5.5)/20+(result*5.5);
+			}
+			else
+			{
+				document.getElementById("b1").innerHTML=result;
+				document.getElementById("b2").innerHTML="0";
+				document.getElementById("b3").innerHTML="0";
+				document.getElementById("b4").innerHTML="contact near EB office";
+			}			
+		}
+	</script>
+
+</body>
+</html>
